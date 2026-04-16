@@ -144,6 +144,10 @@ app.use('/listings', listings);
 app.use('/listings', reviews);
 app.use('/', user);
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 // 14. START SERVER
 
 app.listen(port, () => {
