@@ -146,7 +146,7 @@
                 <b><%= listing.title %></b><br>
                 <%= listing.location %>, <%= listing.country %><br>
                 &#8377;<%= listing.price.toLocaleString("en-IN") %>/night
-                <i class="tax-info">&nbsp;&nbsp;+18% GST</i>
+                <i class="tax-info">&nbsp;&nbsp;<b>+18% GST</b></i>
               </p>
               <p>
                 <i class="tax-info">Price after tax: &#8377;<%= (listing.price * 1.18).toLocaleString("en-IN") %>/night</i>
