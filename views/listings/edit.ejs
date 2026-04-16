@@ -1,0 +1,132 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="edit-wrapper">
+
+  <div class="edit-card">
+    <h2 class="edit-title">Edit Your Listing</h2>
+
+    <form method="POST"
+          action="/listings/<%= listing._id %>?_method=PUT"
+          novalidate
+          class="needs-validation"
+          enctype="multipart/form-data">
+
+      <!-- Title -->
+      <div class="form-group">
+        <label>Title</label>
+        <input name="listing[title]"
+               value="<%= listing.title %>"
+               type="text"
+               required
+               minlength="5" />
+        <div class="invalid-feedback">
+          Please provide a title with at least 5 characters.
+        </div>
+        <div class="valid-feedback">
+          Looks good! Your title is clear and descriptive.
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label>Description</label>
+        <textarea name="listing[description]"
+                  required
+                  minlength="20"><%= listing.description %></textarea>
+        <div class="invalid-feedback">
+          Description must be at least 20 characters to give proper details.
+        </div>
+        <div class="valid-feedback">
+          Excellent! Guests will understand what to expect.
+        </div>
+      </div>
+
+      <!-- Preview last uploaded image -->
+      <div class="form-group">
+        <label style="margin-top: 5px;">Original Listing Image</label>
+        <img class="preview-image" src="<%= listing.image.url %>" alt="image">
+      </div>
+
+      <!-- Image URL -->
+      <div class="form-group">
+        <label>Upload New Image</label>
+        <input name="listing[image][url]"
+               value="<%= listing.image.url %>"
+               type="file"
+               />
+        <div class="invalid-feedback">
+          Please enter a valid image URL (must start with http or https).
+        </div>
+        <div class="valid-feedback">
+          Perfect! The image link looks valid.
+        </div>
+      </div>
+
+      <!-- Price -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Price (₹)</label>
+          <input name="listing[price]"
+                 value="<%= listing.price %>"
+                 type="number"
+                 required
+                 min="1"
+                 step="0.01" />
+          <div class="invalid-feedback">
+            Price must be a positive number greater than 0.
+          </div>
+          <div class="valid-feedback">
+            Great! Pricing is set correctly.
+          </div>
+        </div>
+
+        <!-- Country -->
+        <div class="form-group">
+          <label>Country</label>
+          <input name="listing[country]"
+                 value="<%= listing.country %>"
+                 type="text"
+                 required />
+          <div class="invalid-feedback">
+            Please specify the country where the property is located.
+          </div>
+          <div class="valid-feedback">
+            Country information added successfully.
+          </div>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="form-group">
+        <label>Location</label>
+        <input name="listing[location]"
+               value="<%= listing.location %>"
+               type="text"
+               required />
+        <div class="invalid-feedback">
+          Location is required so guests can find your listing.
+        </div>
+        <div class="valid-feedback">
+          Nice! Location details look complete.
+        </div>
+      </div>
+
+      <!-- Category -->
+      <div class="form-group">
+        <label>Category</label>
+        <select name="listing[category]" required>
+          <% const cats = ["trending","rooms","mountains","lake","beach","forest","arctic","camping","city","castles","pools"]; %>
+          <% const catLabels = { trending:"🔥 Trending", rooms:"🛏️ Rooms", mountains:"⛰️ Mountains", lake:"🏞️ Lake", beach:"🏖️ Beach", forest:"🌲 Forest", arctic:"❄️ Arctic", camping:"⛺ Camping", city:"🏙️ City", castles:"🏰 Castles", pools:"🏊 Pools" }; %>
+          <% for(let c of cats) { %>
+            <option value="<%= c %>" <%= listing.category === c ? 'selected' : '' %>><%= catLabels[c] %></option>
+          <% } %>
+        </select>
+        <div class="invalid-feedback">Please select a category.</div>
+      </div>
+
+      <button class="btn-submit">Update Listing</button>
+
+    </form>
+  </div>
+
+</div>

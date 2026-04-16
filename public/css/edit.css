@@ -1,0 +1,94 @@
+.edit-wrapper{
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.edit-card{
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.edit-title{
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.edit-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label{
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea{
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group textarea{
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color: #FF385C;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,56,92,0.15);
+}
+
+.form-row{
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group{
+    flex: 1;
+}
+
+.btn-submit{
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #FF385C;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover{
+    background-color: #e03150;
+}
+
+.btn-submit:active{
+    transform: scale(0.98);
+}
+
+.preview-image{
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

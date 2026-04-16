@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;500;600&family=Cereal:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --airbnb-red: #FF385C;
+    --airbnb-dark: #222222;
+    --airbnb-gray: #717171;
+    --airbnb-light-gray: #B0B0B0;
+    --airbnb-border: #DDDDDD;
+    --airbnb-bg: #F7F7F7;
+    --airbnb-hover: #222222;
+  }
+
+  /* ✅ STICKY FOOTER LAYOUT */
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fff;
+  }
+
+  main {
+    flex: 1;  /* pushes footer to bottom */
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--airbnb-bg);
+    border-top: 1px solid var(--airbnb-border);
+    color: var(--airbnb-dark);
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 48px 24px 24px;
+    border-bottom: 1px solid var(--airbnb-border);
+  }
+
+  .footer-section {
+    padding-right: 32px;
+  }
+
+  .footer-section:last-child {
+    padding-right: 0;
+  }
+
+  .footer-section h4 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--airbnb-gray);
+    cursor: pointer;
+  }
+
+  .footer-section ul li:hover {
+    color: var(--airbnb-dark);
+    text-decoration: underline;
+  }
+
+  /* ─── FOOTER BOTTOM ─── */
+  .footer-bottom {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-links {
+    display: flex;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+    color: var(--airbnb-dark);
+    text-decoration: none;
+    padding: 0 12px;
+    border-left: 1px solid var(--airbnb-border);
+  }
+
+  .footer-links a:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-right {
+    display: flex;
+    gap: 16px;
+  }
+
+  .globe-btn,
+  .currency-btn {
+    font-size: 14px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .globe-btn:hover,
+  .currency-btn:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 743px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .footer-section {
+      border-top: 1px solid var(--airbnb-border);
+      padding-top: 24px;
+    }
+
+    .footer-section:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<main>
+  <!-- Your page content goes here -->
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section">
+      <h4>Support</h4>
+      <ul>
+        <li>Help Center</li>
+        <li>AirCover</li>
+        <li>Anti-discrimination</li>
+        <li>Disability Support</li>
+        <li>Cancellation Options</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Hosting</h4>
+      <ul>
+        <li>Airbnb your home</li>
+        <li>AirCover for Hosts</li>
+        <li>Hosting resources</li>
+        <li>Community forum</li>
+        <li>Hosting responsibly</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Airbnb</h4>
+      <ul>
+        <li>Newsroom</li>
+        <li>New features</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>Gift cards</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-links">
+      <a href="#">© 2026 Airbnb Clone</a>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Sitemap</a>
+    </div>
+
+    <div class="footer-right">
+      <button class="globe-btn">English (US)</button>
+      <button class="currency-btn">$ USD</button>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
